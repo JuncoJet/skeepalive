@@ -1,0 +1,1 @@
+taskkill /f /im client_windows_amd64.exe
