@@ -3,20 +3,20 @@
 import os,socket
 import zlib,urllib,time
 def killserver():
-    os.system('killserver.bat')#Windows
+    #os.system('killserver.bat')#Windows
     #os.system('./killserver.x.sh')#OS X
-    #os.system('./killserver.sh')#Linux
+    os.system('./killserver.sh')#Linux
 def startserver():
     global vv
     vv=0#重置页面基准
-    os.system('killserver.bat')#Windows
-    #os.system('./killserver.x.sh')#OS X
-    #os.system('./killserver.sh')#Linux
+    #os.system('startserver.bat')#Windows
+    #os.system('./startserver.x.sh')#OS X
+    os.system('./startserver.sh')#Linux
 def restartserver():
     killserver()
     startserver()
 startserver()#随脚本一同启动服务
-ERRTIMES=0#允许出错次数
+ERRTIMES=3#允许出错次数
 proxies={
     'http':'http://127.0.0.1:8000',#手动设置http代理
     'https':'https://127.0.0.1:8000'#手动设置https代理
