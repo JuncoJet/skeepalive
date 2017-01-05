@@ -14,15 +14,16 @@ def startserver():
     os.system('./startserver.sh')#Linux
 def restartserver():
     killserver()
+    time.sleep(3)
     startserver()
 startserver()#随脚本一同启动服务
-ERRTIMES=3#允许出错次数
+ERRTIMES=5#允许出错次数
 proxies={
     'http':'http://127.0.0.1:8000',#手动设置http代理
     'https':'https://127.0.0.1:8000'#手动设置https代理
     #'http':os.getenv("http_proxy")#从系统获取http代理（Linux支持）
 }
-socket.setdefaulttimeout(5)#连接超时
+socket.setdefaulttimeout(10)#连接超时
 i,v,vv=0,0,0
 while 1:
     try:
