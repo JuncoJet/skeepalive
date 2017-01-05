@@ -43,6 +43,7 @@ while 1:
         else:
             #页面数据一致处理
             print "well",i
+            i=0#清空计数器，这里不清空可以累计出错次数，清空为连续出错次数
         vv=v
     except Exception,e:
         #超时或无法连接处理
