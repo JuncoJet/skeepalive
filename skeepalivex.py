@@ -49,7 +49,7 @@ def info():#获取服务器状态
     return info
 #启动http服务器，用于生产负载均衡的pac文件
 #threading.Thread(target=run, args=(host='localhost', port=8080)).start()
-threading.Thread(target=run, args=()).start()#上面语法有误，暂时用默认值
+threading.Thread(target=run, args=(),kwargs={'host':'0.0.0.0','port':'8080'}).start()#上面语法有误，暂时用默认值
 i,v,vv=0,0,0
 ip,port="",""
 while 1:
